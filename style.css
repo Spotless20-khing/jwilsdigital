@@ -1,0 +1,155 @@
+/* Color Variables */
+:root {
+    --color-navy: #001F3F; /* Primary Color */
+    --color-navy-dark: #001223; /* Footer/Accent Background */
+    --color-gold: #D4AF37; /* Accent Color */
+    --color-gold-accent: #ffcc00; /* Lighter Gold for text */
+    --color-white: #FFFFFF;
+    --color-light-navy: #0e3557; /* Slightly lighter navy for contrast section */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-white);
+    color: #333;
+}
+
+/* Typography */
+.font-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.font-body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-navy { color: var(--color-navy); }
+.text-gold { color: var(--color-gold); }
+.text-gold-accent { color: var(--color-gold-accent); }
+
+/* Backgrounds */
+.bg-navy { background-color: var(--color-navy); }
+.bg-navy-dark { background-color: var(--color-navy-dark); }
+.bg-light-navy { background-color: var(--color-light-navy); color: var(--color-white); } /* Ensure text is white for contrast */
+
+/* --- Hero Section Specific Styles --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 31, 63, 0.75), rgba(0, 31, 63, 0.75)), url("images/hero-bg.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-top: 150px !important; 
+}
+
+/* --- Header Transition Styles --- */
+.transparent-header {
+    position: absolute; /* FIX: Use absolute position initially */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent !important;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, position 0.4s ease;
+    z-index: 1030; 
+}
+
+.transparent-header #header-title {
+    color: var(--color-white) !important;
+    transition: color 0.4s ease;
+}
+
+.transparent-header.scrolled {
+    position: fixed; /* FIX: Switch to fixed position on scroll */
+    background-color: var(--color-white) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrolled state text color (switches to navy) */
+.transparent-header.scrolled #header-title {
+    color: var(--color-navy) !important;
+}
+
+
+/* --- CTA Button Styles (Gold/Navy) --- */
+.btn-gold {
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    border: 2px solid var(--color-gold);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: var(--color-navy);
+    color: var(--color-white); /* Stays white as requested: "white text on navy background" */
+    border-color: var(--color-navy);
+}
+
+/* Course Card (for hover effect) */
+.course-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--color-white); /* White background for course cards in light-navy section */
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Instructor Card Image circle on hover */
+.instructor-card img {
+    transition: transform 0.3s ease;
+    border: 4px solid transparent; /* Initial transparent border */
+}
+
+.instructor-card:hover img {
+    transform: scale(1.05);
+    border-color: var(--color-gold); /* Gold border on hover */
+}
+
+/* Form Styling within the Navy Section */
+#enrollmentForm .form-control, 
+#enrollmentForm .form-select {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+#enrollmentForm .form-label {
+    font-weight: 600;
+    color: var(--color-navy);
+}
+
+/* Footer Social Icons Hover */
+.hover-white:hover {
+    color: var(--color-white) !important;
+}
+
+/* --- STICKY WHATSAPP BUTTON STYLES (New Addition) --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 18px;
+    z-index: 10000;
+    box-shadow: 2px 2px 3px #999;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    color: #FFF;
+    transform: scale(1.05);
+}
