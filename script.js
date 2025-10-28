@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const PAYSTACK_PUBLIC_KEY = 'pk_live_49bf25182b74e52f2c21524d3cf2f6dbb4e014be'; 
     
     // Amount for Registration Fee: GH₵ 250.00 (Converted to Pesewas/Kobo: 250 * 100)
-    const REGISTRATION_AMOUNT_KEDIS = 200;
+    const REGISTRATION_AMOUNT_KEDIS = 25200;
     const PAYMENT_CURRENCY = 'GHS';
     const PAYMENT_REF_PREFIX = 'JWILS-REG-LIVE';
 
