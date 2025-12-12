@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const PAYSTACK_PUBLIC_KEY = 'pk_live_49bf25182b74e52f2c21524d3cf2f6dbb4e014be'; 
     
     // Amount for Registration Fee: GH₵ 250.00 (Converted to Pesewas/Kobo: 250 * 100)
-    const REGISTRATION_AMOUNT_KEDIS = 25200;
+    const REGISTRATION_AMOUNT_KEDIS = 15200;
     const PAYMENT_CURRENCY = 'GHS';
     const PAYMENT_REF_PREFIX = 'JWILS-REG-LIVE';
 
@@ -71,27 +71,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 formMessage.classList.remove('text-danger');
                 formMessage.classList.add('text-success');
                 formMessage.innerHTML = `
-                    <p class="mb-1">✅ Thank you, ${name}! Your registration and 250 payment is confirmed.</p>
+                    <p class="mb-1">✅ Thank you, ${name}! Your registration and 150 payment is confirmed.</p>
                     <p class="mb-0">Transaction Ref: ${response.reference}</p>
-                    <p class="small text-secondary fst-italic mt-2">Our admissions team will contact you within 24 hours to discuss the full enrollment fee ($\text{GH₵} 1500$).</p>
+                    <p class="small text-secondary fst-italic mt-2">Our admissions team will contact you within 24 hours to discuss the full enrollment fee ($\text{GH₵} 750$).</p>
                 `;
                 
                 // Clear the form and reset button
                 enrollmentForm.reset();
                 enrollmentForm.classList.remove('was-validated'); 
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-lock me-2"></i> Pay GH₵ 250 to Register';
+                submitBtn.innerHTML = '<i class="fas fa-lock me-2"></i> Pay GH₵ 150 to Register';
             },
 
             // --- Close Callback: User closed the modal ---
             onClose: function() {
                 formMessage.classList.remove('text-success');
                 formMessage.classList.add('text-danger');
-                formMessage.innerHTML = "Payment was cancelled. Please try again to complete your GH₵ 250 registration fee.";
+                formMessage.innerHTML = "Payment was cancelled. Please try again to complete your GH₵ 150 registration fee.";
                 
                 // Re-enable the button
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-lock me-2"></i> Pay GH₵ 250 to Register';
+                submitBtn.innerHTML = '<i class="fas fa-lock me-2"></i> Pay GH₵ 150 to Register';
             }
         });
 
